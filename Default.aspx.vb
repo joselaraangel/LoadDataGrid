@@ -12,7 +12,7 @@ Partial Class _Default
 
     Function GetData(ByVal queryString As String) As DataSet
 
-        Dim connectionString As String = "Data Source=JOSE;Initial Catalog=AdventureWorksDW2014;Integrated Security=True;"
+        Dim connectionString As String = "Data Source=JOSE;Initial Catalog=AppServer;Integrated Security=True;"
 
         Dim ds As New DataSet()
 
@@ -36,14 +36,14 @@ Partial Class _Default
     Protected Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
         Dim queryString As String =
-            "Select * From [AdventureWorksDW2014].[dbo].[DimProductCategory]"
+            "Select * From [AppServer].[dbo].[SolicitudRegistro]"
 
-        If (TxtProducto.Text <> "") Then
-            queryString += " where ProductCategoryKey = '" + TxtProducto.Text + "'"
+        If (TxtRegistroId.Text <> "") Then
+            queryString += " where RegistroId = '" + TxtRegistroId.Text + "'"
         End If
 
-        If (TxtNombre.Text <> "") Then
-            queryString += " where ProductCategoryAlternateKey = '" + TxtNombre.Text + "'"
+        If (TxtNumEmp.Text <> "") Then
+            queryString += " where NumeroEmpleado = '" + TxtNumEmp.Text + "'"
         End If
 
         Dim ds As DataSet = GetData(queryString)
@@ -66,10 +66,10 @@ Partial Class _Default
 
     End Sub
     Protected Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        If (TxtProducto.Text <> "") Then
-            Dim Productkey As String = TxtProducto.Text
+        If (TxtRegistroId.Text <> "") Then
+            Dim Registro As String = TxtRegistroId.Text
 
-            Response.Redirect("About.aspx?ProductCategoryKey=" + Productkey)
+            Response.Redirect("About.aspx?RegistroId=" + Registro)
 
         End If
 

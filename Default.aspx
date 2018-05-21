@@ -7,26 +7,28 @@
     <table style="width:100%;">
         <tr>
             <td style="width: 140px">
-                <asp:Label ID="lblProducto" runat="server" Text="Id Producto"></asp:Label>
+                <asp:Label ID="lblRegistro" runat="server" Text="Registro Id"></asp:Label>
             </td>
             <td style="width: 654px">
-                <asp:TextBox ID="TxtProducto" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtRegistroId" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td style="width: 140px">
-                <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
+                <asp:Label ID="lblNumEmp" runat="server" Text="Número Empleado"></asp:Label>
             </td>
             <td style="width: 654px">
-                <asp:TextBox ID="TxtNombre" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtNumEmp" runat="server"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td style="width: 140px">&nbsp;</td>
+            <td style="width: 140px">
+                <asp:Button ID="btnEditar" runat="server" Text="Editar" Width="130px" BackColor="#000066" ForeColor="White" BorderColor="#000066" />
+            </td>
             <td style="width: 654px">
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="130px" />
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar" Width="130px" BackColor="#000066" ForeColor="White" BorderColor="#000066" />
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -34,47 +36,52 @@
             <td style="width: 140px">&nbsp;</td>
             <td style="width: 654px">
                 <asp:GridView ID="gv1" runat="server" OnPageIndexChanging="gv1_PageIndexChanging" style="margin:0 auto;"
-    CellPadding="4" ForeColor="#333333" GridLines="None" AllowPaging="True" EmptyDataText="No hay Ideas Pendientes a Revisión." AutoGenerateColumns="False">
-        <AlternatingRowStyle BackColor="White" />
+    CellPadding="4" AllowPaging="True" EmptyDataText="No hay Ideas Pendientes a Revisión." AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" BorderStyle="None" BorderWidth="1px">
         <Columns>
-            <asp:BoundField DataField="ProductCategoryKey" HeaderText="CategoriaId" ReadOnly="True" 
-                            SortExpression="CategoriaId">
+            <asp:BoundField DataField="RegistroId" HeaderText="RegistroId" ReadOnly="True" 
+                            SortExpression="RegistroId">
             <ControlStyle Width="10px" />
             <FooterStyle Width="10px" />
             <HeaderStyle Width="10px" />
                         </asp:BoundField>
-            <asp:BoundField DataField="ProductCategoryAlternateKey" HeaderText="Categoria A" ReadOnly="True" 
-                            SortExpression="CategoriaIdAlternativa">
+            <asp:BoundField DataField="NumeroEmpleado" HeaderText="Numero Empleado" ReadOnly="True" 
+                            SortExpression="NumeroEmpleado">
             <ControlStyle Width="110px" />
             <FooterStyle Width="110px" />
             <HeaderStyle Width="110px" />
                         </asp:BoundField>
-            <asp:BoundField DataField="EnglishProductCategoryName" HeaderText="Categoria ENG" ReadOnly="True" 
-                            SortExpression="CategoriaProductoIngles">
+            <asp:BoundField DataField="FechaEnvio" HeaderText="Fecha Envio" ReadOnly="True" 
+                            SortExpression="FechaEnvio">
             <ControlStyle Width="120px" />
             <FooterStyle Width="120px" />
             <HeaderStyle Width="120px" />
                         </asp:BoundField>
-            <asp:BoundField DataField="FrenchProductCategoryName" HeaderText="Categoria FRA" ReadOnly="True" 
-                            SortExpression="CategoriaProductoFrances">
+            <asp:BoundField DataField="idDepartamento" HeaderText="id Depto" ReadOnly="True" 
+                            SortExpression="idDepartamento">
+            <ControlStyle Width="120px" />
+            <FooterStyle Width="120px" />
+            <HeaderStyle Width="120px" />
+                        </asp:BoundField>
+            <asp:BoundField DataField="Status" HeaderText="Status" ReadOnly="True" 
+                            SortExpression="Status">
             <ControlStyle Width="120px" />
             <FooterStyle Width="120px" />
             <HeaderStyle Width="120px" />
                         </asp:BoundField>
         </Columns>
-        <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-        <HeaderStyle BackColor="#DC4141" Font-Bold="True" ForeColor="White" />
+        <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+        <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
         <PagerSettings FirstPageText="First" LastPageText="Last" NextPageText="Next" 
-            PreviousPageText="Previous" Mode="NumericFirstLast"/>
+            PreviousPageText="Previous"/>
 
     
-        <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center"/>
-        <RowStyle BackColor="#FFFBD6" ForeColor="#333333"/>
-        <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-        <SortedAscendingCellStyle BackColor="#FDF5AC" />
-        <SortedAscendingHeaderStyle BackColor="#4D0000" />
-        <SortedDescendingCellStyle BackColor="#FCF6C0" />
-        <SortedDescendingHeaderStyle BackColor="#820000" />
+        <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left"/>
+        <RowStyle BackColor="White" ForeColor="#003399"/>
+        <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+        <SortedAscendingCellStyle BackColor="#EDF6F6" />
+        <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+        <SortedDescendingCellStyle BackColor="#D6DFDF" />
+        <SortedDescendingHeaderStyle BackColor="#002876" />
         <EmptyDataTemplate>
           <div style="width:100%;">
           <table style="margin: 0 auto; text-align:center">
